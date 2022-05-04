@@ -38,6 +38,6 @@ jobs:
         run: bin/rails db:schema:load
       # Add or replace test runners here
       - name: Generate boilerplate configuration files
-        run: rails generate rspec:install
+        run: bin/rails generate rspec:install
       - name: Rub RSpec tests
         run: bundle exec rspec
