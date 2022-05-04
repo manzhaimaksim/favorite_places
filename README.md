@@ -1,24 +1,28 @@
-# README
+### Favorite Places
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Favorite Places is a web application developed in Ruby Training: Spring-Summer 2022
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+Once you've cloned the repository, to get the application running:
 
-* System dependencies
+```
+bundle install
+yarn add
+```
 
-* Configuration
+Next you need to set up you PostgreSQL database using Rails:
 
-* Database creation
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Database initialization
+Finally, to run the app:
 
-* How to run the test suite
+```
+rails server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You should now be able to access the app at `localhost:3000`.
