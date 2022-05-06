@@ -11,4 +11,6 @@ class User < ApplicationRecord
 
   has_many :photos, as: :entity
 
+  has_many :subscribers, foreign_key: :subscriber_id
+
 end
