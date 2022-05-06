@@ -1,0 +1,88 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 1500
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/SymbolArray:
+  Enabled: true
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/PreferredHashMethods:
+  Enabled: true
+
+Style/FormatString:
+  EnforcedStyle: percent
+
+Style/CollectionMethods:
+  Enabled: true
+  PreferredMethods:
+    reduce: "inject"
+
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: true
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+Style/RaiseArgs:
+  Enabled: true
+
+Layout/MultilineOperationIndentation:
+  Enabled: true
+
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+Lint/SuppressedException:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  SpaceBeforeBlockParameters: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Style/BlockDelimiters:
+  Enabled: true
+
+Style/MethodCalledOnDoEndBlock:
+  Enabled: true
+
+Style/SingleLineBlockParams:
+  Enabled: true
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: true
+
+Naming/BinaryOperatorParameterName:
+  Enabled: true
+
+Lint/Debugger:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
