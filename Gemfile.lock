@@ -229,7 +229,11 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.5, >= 6.1.5.1)
   rspec-rails
+<<<<<<< HEAD
   rubocop (>= 1.7.0, < 2.0)
+=======
+  rubocop (= 1.28.2)
+>>>>>>> 54646ce... adding version for rubocop gems
   rubocop-rails (= 2.14.2)
   sass-rails (>= 6)
   spring

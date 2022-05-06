@@ -32,7 +32,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+<<<<<<< HEAD
   gem 'rubocop', '>= 1.7.0', '< 2.0', require: false
+=======
+  gem 'rubocop', '1.28.2', require: false
+>>>>>>> 54646ce... adding version for rubocop gems
   gem 'rubocop-rails', '2.14.2', require: false
 end
 
