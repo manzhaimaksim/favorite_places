@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_06_084816) do
+ActiveRecord::Schema.define(version: 2022_05_06_180955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,18 @@ ActiveRecord::Schema.define(version: 2022_05_06_084816) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_likes_on_place_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.string "status", null: false
-    t.string "type", null: false
+    t.string "notify_type", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
@@ -45,19 +54,9 @@ ActiveRecord::Schema.define(version: 2022_05_06_084816) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "place_likes", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.bigint "place_id"
-    t.index ["place_id"], name: "index_place_likes_on_place_id"
-    t.index ["user_id"], name: "index_place_likes_on_user_id"
-  end
-
   create_table "places", force: :cascade do |t|
     t.float "latitude", null: false
     t.float "longitude", null: false
-    t.integer "likes", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"

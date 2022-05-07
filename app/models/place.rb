@@ -1,10 +1,8 @@
 class Place < ApplicationRecord
 
   has_many :comments, dependent: :destroy
-  has_many :users, through: :comments
 
-  has_many :place_likes, dependent: :destroy
-  has_many :users, through: :place_likes
+  has_many :likes
 
   belongs_to :user
 
