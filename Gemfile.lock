@@ -69,6 +69,10 @@ GEM
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     diff-lcs (1.5.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -185,6 +189,8 @@ GEM
       sprockets-rails
       tilt
     semantic_range (3.0.0)
+    shoulda-matchers (5.1.0)
+      activesupport (>= 5.2.0)
     spring (4.0.0)
     sprockets (4.0.3)
       concurrent-ruby (~> 1.0)
@@ -222,6 +228,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
+  dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
@@ -232,6 +239,7 @@ DEPENDENCIES
   rubocop (>= 1.7.0, < 2.0)
   rubocop-rails (= 2.14.2)
   sass-rails (>= 6)
+  shoulda-matchers (~> 5.0)
   spring
   turbolinks (~> 5)
   tzinfo-data
