@@ -1,13 +1,7 @@
 class UsersController < ApplicationController
-  def new
-  end
-
-  def create
-  end
+  before_action :authenticate_user!, except: [:show]
 
   def show
-  end
-
-  def edit
+    @user = User.find(params[:id])
   end
 end
