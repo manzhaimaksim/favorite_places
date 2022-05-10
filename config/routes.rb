@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
-  resources :users, only: [:new, :show, :edit]
+  root to: 'places#index'
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 end
