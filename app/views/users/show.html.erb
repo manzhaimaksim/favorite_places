@@ -1,2 +1,10 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<b>Username</b>
+<p><%= @user.username %></p>
+<b>Name</b>
+<p><%= @user.name %></p>
+<b>Sex</b>
+<p><%= @user.sex %></p>
+<b>Date of birth</b>
+<p><%= @user.date_of_birth %></p>
+<b>Date of registration</b>
+<p><%= @user.created_at.to_date %></p>
