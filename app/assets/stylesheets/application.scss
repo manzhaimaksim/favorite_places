@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+  // Import Bootstrap v5  
+  // @import "~bootstrap/scss/bootstrap";
+
+  h2 {
+    text-decoration: underline;
+  }
+  
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
