@@ -21,4 +21,3 @@ require("channels")
 require("jquery")
 
 require.context('../images', true);
-console.log('Hello World from Webpacker');
