@@ -22,6 +22,16 @@ li {
   list-style-type: none;
 }
 
-img{
-  max-width: 100%;
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+p {
+  font-family: 'Awesome 6 Free', sans-serif;
 }
