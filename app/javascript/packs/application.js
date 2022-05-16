@@ -10,9 +10,9 @@ import "channels"
 import {} from 'jquery-ujs'
 import 'bootstrap/dist/js/bootstrap';
 
-// Rails.start()
-// Turbolinks.start()
-// ActiveStorage.start()
+Rails.start()
+Turbolinks.start()
+ActiveStorage.start()
 
 require("@rails/ujs").start()
 require("turbolinks").start()
