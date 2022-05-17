@@ -34,13 +34,8 @@ module FavoritePlaces
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-<<<<<<< HEAD
     config.assets.initialize_on_precompile = false
     config.assets.enabled = false
     config.assets.precompile = []
-=======
-
-    # config.assets.initialize_on_precompile = false
->>>>>>> feature/landing_page
   end
 end
