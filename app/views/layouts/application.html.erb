@@ -22,14 +22,30 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to current_user.username, user_path(current_user), :class => "nav-link active" %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Профиль
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <%= link_to current_user.username, user_path(current_user), :class => "dropdown-item" %>
+                  </li>
+                  <li>
+                    <%= link_to "Редактировать профиль", edit_user_registration_path, :class => "dropdown-item" %>
+                  </li>
+                  <li>
+                    <%= link_to "Выйти", destroy_user_session_path, :method => "delete", :class => "dropdown-item" %>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
-                <%= link_to "Редактировать профиль", edit_user_registration_path, :class => "nav-link active" %>
+                <%= link_to "Мои места", "#", :class => "nav-link active" %>
               </li>
               <li class="nav-item">
-                <%= link_to "Выйти", destroy_user_session_path, :method => "delete", :class => "nav-link active"  %>
+                <%= link_to "Друзья", "#", :class => "nav-link active" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Избранное", "#", :class => "nav-link active" %>
               </li>
             <% else %>
               <li class="nav-item">
