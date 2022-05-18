@@ -1,0 +1,15 @@
+<p>
+  <div id="map"></div>
+</p>
+<div class="container">
+  <b>Название</b>
+  <p><%= @place.title %></p>
+  <b>Широта</b>
+  <p><%= @place.latitude %></p>
+  <b>Долгота</b>
+  <p><%= @place.longitude %></p>
+  <b>Дата создания</b>
+  <p><%= @place.created_at.to_date %></p>
+  <b>Добавил</b>
+  <p><%= link_to @place.user.username, user_path(@place.user) %></p>
+</div>
