@@ -39,7 +39,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <%= link_to "Мои места", "#", :class => "nav-link active" %>
+                <%= link_to "Добавить место", new_place_path, :class => "nav-link active" %>
               </li>
               <li class="nav-item">
                 <%= link_to "Друзья", "#", :class => "nav-link active" %>
@@ -62,8 +62,8 @@
     <div class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+      <%= yield %>
     </div>
-    <%= yield %>
   </body>
 </html>
 
