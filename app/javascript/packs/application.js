@@ -9,7 +9,6 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import {} from 'jquery-ujs'
 import 'bootstrap/dist/js/bootstrap';
-import "../src/mapbox"
 
 Rails.start()
 Turbolinks.start()
