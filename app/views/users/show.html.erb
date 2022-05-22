@@ -1,3 +1,5 @@
+<div id="map"></div>
+
 <div class="container">
   <% if @user.places.any? %>
     <h3>Добавленые места</h3>
@@ -21,3 +23,5 @@
   <b>Date of registration</b>
   <p><%= @user.created_at.to_date %></p>
 </div>
+
+<%= javascript_pack_tag 'map_users_places' %>

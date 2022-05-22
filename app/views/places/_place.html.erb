@@ -7,6 +7,6 @@
 
   <% if current_user == place.user %>
     <%= link_to "Редактировать", edit_place_path(place) %>
-    <%= link_to "Удалить", place_path(place), method: :delete %>
+    <%= link_to "Удалить", place_path(place), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 </div>
