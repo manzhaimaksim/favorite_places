@@ -16,8 +16,13 @@ map.on('load', () => {
   function showPopup(event){
     var coordinates = event.lngLat;
     console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
+
+
     popup.setLngLat(coordinates).setHTML(popuptext).addTo(map);
     popupButton.addEventListener('click', add_marker(coordinates));
+
+
+
 
     let long = document.getElementById('lng');
     long.value = coordinates.lng;
@@ -28,29 +33,29 @@ map.on('load', () => {
 
   function add_marker (coordinates) {
     return (event) => {
-    console.log("coordinates");
-    marker.setLngLat(coordinates).addTo(map);
+      console.log("coordinates");
+      marker.setLngLat(coordinates).addTo(map);
+    }
   }
-}
 
-map.on('click', showPopup);
+  map.on('click', showPopup);
 
-map.on('click', 'places', (e) => {
-  // Copy coordinates array.
-  const coordinates = e.features[0].geometry.coordinates.slice();
-  const description = e.features[0].properties.description;
-  // Ensure that if the map is zoomed out such that multiple
-  // copies of the feature are visible, the popup appears
-  // over the copy being pointed to.
-  while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-  }
-  
-  new mapboxgl.Popup()
-  .setLngLat(coordinates)
-  .setHTML(description)
-  .addTo(map);
-});
+  map.on('click', 'places', (e) => {
+    // Copy coordinates array.
+    const coordinates = e.features[0].geometry.coordinates.slice();
+    const description = e.features[0].properties.description;
+    // Ensure that if the map is zoomed out such that multiple
+    // copies of the feature are visible, the popup appears
+    // over the copy being pointed to.
+    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+      coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+    }
+    
+    new mapboxgl.Popup()
+    .setLngLat(coordinates)
+    .setHTML(description)
+    .addTo(map);
+  });
 
   // Change the cursor to a pointer when the mouse is over the places layer.
   map.on('mouseenter', 'places', () => {
