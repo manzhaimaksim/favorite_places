@@ -1,5 +1,12 @@
 <div class="container">
-  <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/favorite-places-2022-team-e/cl3bljsxp003815qqxrqlbc9h.html?title=false&access_token=pk.eyJ1IjoiZmF2b3JpdGUtcGxhY2VzLTIwMjItdGVhbS1lIiwiYSI6ImNsM2JsZmI2djA4MzAzanA0cnljNXZreWQifQ.SLJqEv5s1nnEpBQduW3q7w&zoomwheel=false#11.14/53.9065/27.5941" title="Basic" style="border:none;"></iframe>
+  <% if @user.places.any? %>
+    <h3>Добавленые места</h3>
+    <div class="row">
+      <%= render partial: 'places/place', collection: @user.places %>
+    </div>
+  <% else %>
+    <p class="buffer-top">Пользователь пока еще не создал ни одного места</p>
+  <% end %>
 </div>
 
 <div class="container">
