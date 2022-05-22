@@ -1,13 +1,13 @@
 class PlacesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_current_user, except: [:show]
+  before_action :set_place, only: [:show, :edit, :update, :destroy]
 
   def index
     @places = Place.all
   end
 
   def show
-    @place = Place.find(params[:id])
   end
 
   def new
@@ -24,6 +24,22 @@ class PlacesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @place.update(place_params)
+      redirect_to @place, notice: 'Ваши данные успешно обновлены'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @place.destroy
+    redirect_to places_url, notice: 'Ваше место успешно удалено'
+  end
+
   private
 
   def place_params
@@ -32,5 +48,9 @@ class PlacesController < ApplicationController
 
   def set_current_user
     @user = current_user
+  end
+
+  def set_place
+    @place = Place.find(params[:id])
   end
 end
