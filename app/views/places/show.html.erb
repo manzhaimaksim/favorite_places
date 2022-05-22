@@ -1,4 +1,5 @@
 <div class="container">
+  <div id="map" data-title="<%= @place.title %>" data-latitude="<%= @place.latitude %>" data-longitude="<%= @place.longitude %>"></div>
   <b>Название</b>
   <p><%= @place.title %></p>
   <b>Описание</b>
@@ -12,3 +13,4 @@
   <b>Добавил</b>
   <p><%= link_to @place.user.username, user_path(@place.user) %></p>
 </div>
+<%= javascript_pack_tag 'map_show' %>
