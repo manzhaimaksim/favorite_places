@@ -1,12 +1,11 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
 
   def show
     @user = User.find(params[:id])
 
-    respond_to do |format|
-      format.html
-      format.any(:xml, :json) { render request.format.to_sym => @user.places }
-    end
+    gon.users_places = @user.places
   end
 end
