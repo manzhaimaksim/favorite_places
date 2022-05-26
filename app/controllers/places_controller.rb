@@ -5,6 +5,7 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+    gon.places = @places
   end
 
   def show
