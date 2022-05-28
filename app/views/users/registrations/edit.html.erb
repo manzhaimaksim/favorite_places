@@ -29,6 +29,12 @@
       <%= f.date_field :date_of_birth %>
     </div>
 
+    <div class="field">
+      <%= f.label :avatar %>
+      <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+      <%= f.file_field :avatar %>
+    </div>
+
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
