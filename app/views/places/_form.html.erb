@@ -1,0 +1,26 @@
+<%= form_for(@place) do |f| %>
+  <%= render partial: 'form_errors', locals: {model: @place} %>
+
+    <div id="map"></div>
+
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :latitude %>
+      <%= f.text_field :latitude, class: 'form-control', id: 'lat', value: '' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :longitude %>
+      <%= f.text_field :longitude, class: 'form-control', id: "lng", value: '' %>
+    </div> 
+    <div class="actions">
+      <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
+      или <%= link_to 'вернуться', :back %>
+    </div>
+  <% end %>

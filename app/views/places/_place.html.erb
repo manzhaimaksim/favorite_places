@@ -1,0 +1,12 @@
+<div class="col-12 col-sm-6">
+  <p><%= place.title %></p>
+</div>
+
+<div class="col-12 col-sm-6">
+  <%= link_to "Посмотреть", place_path(place) %>
+
+  <% if current_user == place.user %>
+    <%= link_to "Редактировать", edit_place_path(place) %>
+    <%= link_to "Удалить", place_path(place), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+</div>
