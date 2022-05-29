@@ -4,11 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  has_many :notifications, dependent: :destroy
-  has_many :places
   has_many :comments, dependent: :destroy
   has_many :liked_places, through: :likes, as: :place
-  has_many :photos, as: :entity
+  has_many :notifications, dependent: :destroy
+  has_many :photos, dependent: :destroy
+  has_many :places, dependent: :destroy
   has_many :subscribers, foreign_key: :subscriber_id
 
   validates :username, presence: true, uniqueness: true
