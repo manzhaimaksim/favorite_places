@@ -14,3 +14,11 @@
   <p><%= link_to @place.user.username, user_path(@place.user) %></p>
 </div>
 <%= javascript_pack_tag 'map_show' %>
+
+<div class="place-photo-form">
+  <%= render partial: 'photos/form', locals: {photo: @new_photo || @place.photos.build} %>
+</div>
+
+<div class="place-photos-gallery">
+  <%= render partial: 'photos/photo', collection: @place.photos.except(@new_photo) %>
+</div>

@@ -1,0 +1,20 @@
+<%= form_for [@place, photo], html: { multipart: true } do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: photo} %>
+
+  <div class="form-group">
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
+  </div>
+  <div class="field">
+    <%= f.label :alt %><br />
+    <%= f.text_field :alt, autofocus: true, autocomplete: "alt" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Загрузить', class: 'btn btn-primary' %>
+  </div>
+<% end %>
