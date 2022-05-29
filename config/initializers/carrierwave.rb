@@ -2,16 +2,31 @@ require 'carrierwave/storage/fog'
 
 if Rails.env.production?
   CarrierWave.configure do |config|
-    config.fog_credentials = {
-      provider:              'AWS',
-      aws_access_key_id:     ENV['S3_ACCESS_KEY'],
-      aws_secret_access_key: ENV['S3_SECRET_KEY'],
-      use_iam_profile:       false,
-      host:                  's3.example.com',
-      endpoint:              'https://s3.example.com:8080'
+    config.storage    = :aws
+    config.aws_bucket = ENV.fetch('S3_BUCKET_NAME')
+    config.aws_acl    = 'public-read'
+  
+    # Optionally define an asset host for configurations that are fronted by a
+    # content host, such as CloudFront.
+    # config.asset_host = 'http://example.com'
+  
+    # The maximum period for authenticated_urls is only 7 days.
+    config.aws_authenticated_url_expiration = 60 * 60 * 24 * 7
+  
+    # Set custom options such as cache control to leverage browser caching
+    config.aws_attributes = {
+      expires: 1.week.from_now.httpdate,
+      cache_control: 'max-age=604800'
     }
-    config.fog_directory  = ENV['S3_BUCKET_NAME']
-    config.fog_public     = false
-    config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
+  
+    config.aws_credentials = {
+      access_key_id:     ENV.fetch('S3_ACCESS_KEY'),
+      secret_access_key: ENV.fetch('S3_SECRET_KEY'),
+      region:            ENV.fetch('AWS_REGION') # Required
+    }
+  
+    # Optional: Signing of download urls, e.g. for serving private
+    # content through CloudFront.
+    # config.aws_signer = -> (unsigned_url, options) { Aws::CF::Signer.sign_url unsigned_url, options }
   end
 end
