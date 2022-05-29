@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'carrierwave'
 gem 'devise'
 gem 'dotenv-rails'
+gem 'fog-aws'
 gem 'gon'
 gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
