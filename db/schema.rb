@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_19_093956) do
+ActiveRecord::Schema.define(version: 2022_05_28_113700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,15 @@ ActiveRecord::Schema.define(version: 2022_05_19_093956) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string "entity_type", null: false
-    t.bigint "entity_id", null: false
-    t.string "image_url", null: false
+    t.string "photo", null: false
     t.text "title", null: false
     t.text "alt", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "place_id"
+    t.index ["place_id"], name: "index_photos_on_place_id"
+    t.index ["user_id"], name: "index_photos_on_user_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 2022_05_19_093956) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "avatar"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
