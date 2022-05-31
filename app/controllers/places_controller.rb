@@ -9,6 +9,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @new_photo = @place.photos.build(params[:photo])
   end
 
   def new

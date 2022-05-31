@@ -19,11 +19,6 @@ li {
   list-style-type: none;
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
-
 .container {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -31,4 +26,10 @@ img {
 
 p {
   font-family: 'Awesome 6 Free', sans-serif;
+}
+
+.img-icon{
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
 }
