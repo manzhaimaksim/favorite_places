@@ -1,5 +1,16 @@
 <div class="container">
   <div id="map" data-title="<%= @place.title %>" data-latitude="<%= @place.latitude %>" data-longitude="<%= @place.longitude %>"></div>
+
+  <b>Понравилось: </b><%= @place.likes.count %>
+
+  <% if user_signed_in? %>
+    <% if @place.liked?(current_user) %>
+      <%= button_to "Like", like_path(@place), method: "put", disabled: true %>
+    <% else %>
+      <%= button_to "Like", like_path(@place), method: "put" %>
+    <% end %>
+  <% end %>
+
   <b>Название</b>
   <p><%= @place.title %></p>
   <b>Описание</b>
