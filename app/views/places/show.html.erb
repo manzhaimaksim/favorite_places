@@ -9,6 +9,7 @@
     <% else %>
       <%= button_to "Like", like_path(@place), method: "put" %>
     <% end %>
+    <%= button_to "Dislike", dislike_path(@place), method: "put" %>
   <% end %>
 
   <b>Название</b>
