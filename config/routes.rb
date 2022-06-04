@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "users/registrations"}, path: "",
                      path_names: {sign_in: "login", registration: "registration"}
   put "/places/:id/like", to: "places#like", as: "like"
+  put "/places/:id/dislike", to: "places#dislike", as: "dislike"
 end
