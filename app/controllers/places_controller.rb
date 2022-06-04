@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_current_user, except: [:show]
-  before_action :set_place, only: [:show, :edit, :update, :destroy, :like]
+  before_action :set_place, only: [:show, :edit, :update, :destroy, :like, :dislike]
 
   def index
     @places = Place.all
@@ -44,6 +44,11 @@ class PlacesController < ApplicationController
 
   def like
     Like.create(user_id: current_user.id, place_id: @place.id)
+    redirect_to place_path(@place)
+  end
+
+  def dislike
+    Like.destroy_by(place_id: params[:id], user_id: current_user.id)
     redirect_to place_path(@place)
   end
 
