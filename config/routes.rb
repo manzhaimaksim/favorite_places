@@ -10,4 +10,5 @@ Rails.application.routes.draw do
                      path_names: {sign_in: "login", registration: "registration"}
   put "/places/:id/like", to: "places#like", as: "like"
   put "/places/:id/dislike", to: "places#dislike", as: "dislike"
+  get "/users/:id/favorite", to: "users#favorite", as: "favorite"
 end
