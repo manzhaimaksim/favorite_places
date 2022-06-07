@@ -9,7 +9,8 @@ class UsersController < ApplicationController
   end
 
   def favorite
-    @places_likes = Place.joins("INNER JOIN likes ON likes.place_id = places.id")
+    @places_likes = Place.joins("INNER JOIN likes ON likes.place_id = places.id WHERE likes.user_id = #{@user.id}")
+    gon.favorite_places = @places_likes
   end
 
   private
