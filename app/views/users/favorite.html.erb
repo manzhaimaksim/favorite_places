@@ -1,0 +1,15 @@
+<h1>Избранное пользователя <%= @user.username %></h1>
+
+<div id="map"></div>
+
+<div class="container">
+  <% if @places_likes.any? %>
+    <div class="row">
+      <%= render partial: 'places/place', collection: @places_likes %>
+    </div>
+  <% else %>
+    <p class="buffer-top">Пользователю пока еще не понравилось ни одно место</p>
+  <% end %>
+</div>
+
+<%= javascript_pack_tag 'map_favorite' %>
