@@ -22,6 +22,7 @@
   <p><%= @user.date_of_birth %></p>
   <b>Date of registration</b>
   <p><%= @user.created_at.to_date %></p>
+  <p><%= link_to "Favorite places", favorite_path(@user) %></p>
 </div>
 
 <%= javascript_pack_tag 'map_users_places' %>
