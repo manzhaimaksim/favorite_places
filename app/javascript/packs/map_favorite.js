@@ -12,5 +12,6 @@ let favorite_places = gon.favorite_places;
 favorite_places.forEach(function(place, i, favorite_places) {
   const marker = new mapboxgl.Marker()
   .setLngLat([place.longitude, place.latitude])
+  .setPopup(new mapboxgl.Popup().setHTML("<a href=" + "/places/" + place.id + ">" + place.title + "</a>"))
   .addTo(map);
 });

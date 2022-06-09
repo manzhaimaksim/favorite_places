@@ -12,6 +12,6 @@ let places = gon.places;
 places.forEach(function(place, i, places) {
   const marker = new mapboxgl.Marker()
   .setLngLat([place.longitude, place.latitude])
-  .setPopup(new mapboxgl.Popup().setHTML("<h3>" + place.title + "</h3></br><p>" + place.description + "</p>"))
+  .setPopup(new mapboxgl.Popup().setHTML("<a href=" + "/places/" + place.id + ">" + place.title + "</a>"))
   .addTo(map);
 });
