@@ -1,27 +1,37 @@
-<div id="map"></div>
-
 <div class="container">
-  <% if @user.places.any? %>
-    <h3>Добавленые места</h3>
-    <div class="row">
-      <%= render partial: 'places/place', collection: @user.places %>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+      <div id="map"></div>
     </div>
-  <% else %>
-    <p class="buffer-top">Пользователь пока еще не создал ни одного места</p>
-  <% end %>
-</div>
 
-<div class="container">
-  <b>Username</b>
-  <p><%= @user.username %></p>
-  <b>Name</b>
-  <p><%= @user.name %></p>
-  <b>Sex</b>
-  <p><%= @user.sex %></p>
-  <b>Date of birth</b>
-  <p><%= @user.date_of_birth %></p>
-  <b>Date of registration</b>
-  <p><%= @user.created_at.to_date %></p>
+    <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+      <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+      <b>Username</b>
+      <p><%= @user.username %></p>
+      <b>Name</b>
+      <p><%= @user.name %></p>
+      <b>Sex</b>
+      <p><%= @user.sex %></p>
+      <b>Date of birth</b>
+      <p><%= @user.date_of_birth %></p>
+      <b>Date of registration</b>
+      <p><%= @user.created_at.to_date %></p>
+      <p><%= link_to "Favorite places", favorite_path(@user) %></p>
+    </div>
+  </div>
 </div>
 
 <%= javascript_pack_tag 'map_users_places' %>
+
+<% if @user == current_user %>
+  <div class="container">
+    <% if @user.places.any? %>
+      <h3>Ваши добавленые места</h3>
+      <div class="row">
+        <%= render partial: 'places/place', collection: @user.places %>
+      </div>
+    <% else %>
+      <p class="buffer-top">Вы пока еще не создали ни одного места</p>
+    <% end %>
+  </div>
+<% end %>

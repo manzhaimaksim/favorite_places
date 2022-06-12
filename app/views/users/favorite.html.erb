@@ -1,0 +1,9 @@
+<h1>Избранное пользователя <%= @user.username %></h1>
+
+<% if !@places_likes.any? %>
+  <p class="buffer-top">Пользователю пока еще не понравилось ни одно место</p>
+<% end %>
+
+<div id="map"></div>
+
+<%= javascript_pack_tag 'map_favorite' %>

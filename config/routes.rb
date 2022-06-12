@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   devise_for :users, controllers: {registrations: "users/registrations"}, path: "",
                      path_names: {sign_in: "login", registration: "registration"}
+  put "/places/:id/like", to: "places#like", as: "like"
+  put "/places/:id/dislike", to: "places#dislike", as: "dislike"
+  get "/users/:id/favorite", to: "users#favorite", as: "favorite"
 end

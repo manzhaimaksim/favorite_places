@@ -16,17 +16,10 @@ map.on('load', () => {
   function showPopup(event){
     var coordinates = event.lngLat;
     console.log('Lng:', coordinates.lng, 'Lat:', coordinates.lat);
-
-
     popup.setLngLat(coordinates).setHTML(popuptext).addTo(map);
     popupButton.addEventListener('click', add_marker(coordinates));
-
-
-
-
     let long = document.getElementById('lng');
     long.value = coordinates.lng;
-
     let lat = document.getElementById('lat');
     lat.value = coordinates.lat;
   }
