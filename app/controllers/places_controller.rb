@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class PlacesController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: %i[show index]
   before_action :set_current_user, except: [:show]
-  before_action :set_place, only: [:show, :edit, :update, :destroy, :like, :dislike]
+  before_action :set_place, only: %i[show edit update destroy like dislike]
 
   def index
     @places = Place.all
@@ -20,18 +22,17 @@ class PlacesController < ApplicationController
     @place = current_user.places.build(place_params)
 
     if @place.save
-      redirect_to @place, notice: 'Ваше место успешно создано'
+      redirect_to @place, notice: "Ваше место успешно создано"
     else
       render :new
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @place.update(place_params)
-      redirect_to @place, notice: 'Ваши данные успешно обновлены'
+      redirect_to @place, notice: "Ваши данные успешно обновлены"
     else
       render :edit
     end
@@ -39,7 +40,7 @@ class PlacesController < ApplicationController
 
   def destroy
     @place.destroy
-    redirect_to places_url, notice: 'Ваше место успешно удалено'
+    redirect_to places_url, notice: "Ваше место успешно удалено"
   end
 
   def like
