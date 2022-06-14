@@ -11,10 +11,10 @@ class User < ApplicationRecord
   has_many :places, dependent: :destroy
   has_many :subscribers, foreign_key: :subscriber_id
 
-  validates :username, presence: true, uniqueness: true
-  validates :email, presence: true, uniqueness: true
-  validates :name, presence: true
-  validates :date_of_birth, presence: true
+  validates :username, presence: true, uniqueness: true, length: { in: 3..16 }
+  validates :email, presence: true, uniqueness: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+  validates :name, presence: true, length: { in: 3..32 }
+  validates :date_of_birth, presence: true, inclusion: { in: Time.new(1900, 1, 1)..((Time.now - 13.year)) }
 
   mount_uploader :avatar, AvatarUploader
 end
