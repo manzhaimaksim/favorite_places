@@ -13,6 +13,8 @@ en:
       one: "Your form has %{count} error"
       other: "Your form has %{count} errors"
   places:
+    edit:
+      edit_title: "Edit place"
     form:
       description: "Description"
       latitude: "Latitude"
@@ -20,7 +22,7 @@ en:
       or: "or"
       return: "return"
       save: "Save"
-      title: "title"
+      title: "Title"
     index:
       paragraph_1: "Register on the site and get a new platform for communicating with friends, searching for new favorite places."
       paragraph_2: "Add your favorite places to your city map and share with your friends."
@@ -34,10 +36,33 @@ en:
       delete: "Delete"
       edit: "Edit"
       show: "Show"
+    show:
+      creator: "Creator"
+      dislike: "Dislike"
+      like: "Like"
+      liked: "Liked:"
+      date_of_creation: "Date of creation"
+      description: "Description"
+      latitude: "Latitude"
+      longitude: "Longitude"
+      title: "Title"
+  photos:
+    form:
+      alt: "Alt"
+      photo: "Photo"
+      title: "Title"
+      upload: "Upload"
+    photo:
+      creator: "Creator"
   users:
     favorites:
       has_not_liked: "User hasn't liked any place yet"
       title: "Favorite places of"
+    sessions:
+      login: "Log in"
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me"
     show:
       date_of_birth: "Date of birth"
       date_of_registration: "Date of registration"
@@ -47,3 +72,25 @@ en:
       sex: "Sex"
       username: "Username"
       your_added_places: "Your added places"
+    registration:
+      avatar: "Avatar"
+      back: "Back"
+      cancel_account: "Cancel my account"
+      cancel_message: "Are you sure?"
+      characters_minimum: " characters minimum"
+      confirmable: "Currently waiting confirmation for: "
+      current_password: "Current password"
+      current_password_message: "we need your current password to confirm your changes"
+      date_of_birth: "Date of birth"
+      edit_title: "Edit profile"
+      email: "Email"
+      female: "Female"
+      male: "Male"
+      name: "Name"
+      new_title: "Registration"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      password_message: "leave blank if you don't want to change it"
+      sex: "Sex"
+      update: "Update"
+      username: "Username"

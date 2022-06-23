@@ -14,6 +14,8 @@ ru:
       few: "В вашей форме %{count} ошибки"
       many: "В вашей форме %{count} ошибок"
   places:
+    edit:
+      edit_title: "Редактировать место"
     form:
       description: "Описание"
       latitude: "Широта"
@@ -35,10 +37,33 @@ ru:
       delete: "Удалить"
       edit: "Редактировать"
       show: "Посмотреть"
+    show:
+      creator: "Создатель"
+      dislike: "Не нравится"
+      like: "Нравится"
+      liked: "Понравилось:"
+      date_of_creation: "Дата создания"
+      description: "Описание"
+      latitude: "Широта"
+      longitude: "Долгота"
+      title: "Название"
+  photos:
+    form:
+      alt: "Альтернативное описание"
+      photo: "Фото"
+      title: "Название"
+      upload: "Загрузить"
+    photo:
+      creator: "Добавил"
   users:
     favorites:
       has_not_liked: "Пользователю пока еще не понравилось ни одно место"
       title: "Любимые места"
+    sessions:
+      login: "Войти"
+      email: "Email"
+      password: "Пароль"
+      remember_me: "Запомнить меня"
     show:
       date_of_birth: "Дата рождения"
       date_of_registration: "Дата регистрации"
@@ -47,3 +72,25 @@ ru:
       sex: "Пол"
       username: "Никнейм"
       your_added_places: "Ваши добавленные места"
+    registration:
+      avatar: "Аватар"
+      back: "Назад"
+      cancel_account: "Удалить мою учетную запись"
+      cancel_message: "Вы уверены?"
+      characters_minimum: " минимум букв"
+      confirmable: "В настоящее время ожидается подтверждение для: "
+      current_password: "Действующий пароль"
+      current_password_message: "нам нужен ваш текущий пароль, чтобы подтвердить ваши изменения"
+      date_of_birth: "Дата рождения"
+      edit_title: "Редактировать профиль"
+      email: "Email"
+      female: "Женский"
+      male: "Мужской"
+      name: "Имя"
+      new_title: "Регистрация"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+      password_message: "оставьте пустым, если не хотите его менять"
+      sex: "Пол"
+      update: "Обновить"
+      username: "Никнейм"

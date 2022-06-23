@@ -2,19 +2,19 @@
   <%= render partial: 'partials/form_errors', locals: {model: photo} %>
 
   <div class="form-group">
-    <%= f.label :photo %>
+    <%= f.label t('photos.form.photo') %>
     <%= f.file_field :photo %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label t('photos.form.title') %><br />
     <%= f.text_field :title, autofocus: true, autocomplete: "title" %>
   </div>
   <div class="field">
-    <%= f.label :alt %><br />
+    <%= f.label t('photos.form.alt') %><br />
     <%= f.text_field :alt, autofocus: true, autocomplete: "alt" %>
   </div>
 
   <div class="actions">
-    <%= f.submit 'Загрузить', class: 'btn btn-primary' %>
+    <%= f.submit t('photos.form.upload'), class: 'btn btn-primary' %>
   </div>
 <% end %>

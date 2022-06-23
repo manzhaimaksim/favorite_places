@@ -5,7 +5,7 @@
     </div>
 
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-      <b>Понравилось: </b><%= @place.likes.count %>
+      <b><%= t('places.show.liked') %> </b><%= @place.likes.count %>
 
       <% if user_signed_in? %>
         <% if @place.liked?(current_user) %>
@@ -16,17 +16,17 @@
         <%= button_to "Dislike", dislike_path(@place), method: "put" %>
       <% end %>
 
-      <b>Название</b>
+      <b><%= t('places.show.title') %></b>
       <p><%= @place.title %></p>
-      <b>Описание</b>
+      <b><%= t('places.show.description') %></b>
       <p><%= @place.description %></p>
-      <b>Широта</b>
+      <b><%= t('places.show.latitude') %></b>
       <p><%= @place.latitude %></p>
-      <b>Долгота</b>
+      <b><%= t('places.show.longitude') %></b>
       <p><%= @place.longitude %></p>
-      <b>Дата создания</b>
+      <b><%= t('places.show.date_of_creation') %></b>
       <p><%= @place.created_at.to_date %></p>
-      <b>Добавил</b>
+      <b><%= t('places.show.creator') %></b>
       <p><%= link_to @place.user.username, user_path(@place.user) %></p>
     </div>
   </div>

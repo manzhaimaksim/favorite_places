@@ -1,5 +1,5 @@
 <div class="place-photo buffer-both">
   <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url %>
 
-  Добавил <%= render partial: 'users/user', object: photo.user %>
+  <%= t('photos.phot.creator') %> <%= render partial: 'users/user', object: photo.user %>
 </div>
