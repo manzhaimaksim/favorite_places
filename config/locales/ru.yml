@@ -1,0 +1,96 @@
+ru:
+  add_place: "Добавить место"
+  edit_profile: "Редактировать профиль"
+  friends: "Друзья"
+  log_in: "Войти"
+  logout: "Выйти"
+  main_title: "Любимые места"
+  my_favorites: "Мое избранное"
+  profile: "Профиль"
+  sign_up: "Зарегистрироваться"
+  form_errors:
+    errors: 
+      one: "В вашей форме %{count} ошибка"
+      few: "В вашей форме %{count} ошибки"
+      many: "В вашей форме %{count} ошибок"
+  places:
+    edit:
+      edit_title: "Редактировать место"
+    form:
+      description: "Описание"
+      latitude: "Широта"
+      longitude: "Долгота"
+      or: "или"
+      return: "вернуться"
+      save: "Сохранить"
+      title: "Название"
+    index:
+      paragraph_1: "Регистрируйся на сайте и получи новую площадку для общения с друзьями, поиска новых любимых мест."
+      paragraph_2: "Добавляй свои любимые места на карту своего города и делись с друзьями."
+      paragraph_3: "Отправляй фото своих любимых мест."
+      title_p1: "Регистрируйся"
+      title_p2: "Добавляй места"
+      title_p3: "Отправь фото"
+    new:
+      title: "Создание нового места"
+    place:
+      delete: "Удалить"
+      edit: "Редактировать"
+      show: "Посмотреть"
+    show:
+      creator: "Создатель"
+      dislike: "Не нравится"
+      like: "Нравится"
+      liked: "Понравилось:"
+      date_of_creation: "Дата создания"
+      description: "Описание"
+      latitude: "Широта"
+      longitude: "Долгота"
+      title: "Название"
+  photos:
+    form:
+      alt: "Альтернативное описание"
+      photo: "Фото"
+      title: "Название"
+      upload: "Загрузить"
+    photo:
+      creator: "Добавил"
+  users:
+    favorites:
+      has_not_liked: "Пользователю пока еще не понравилось ни одно место"
+      title: "Любимые места"
+    sessions:
+      login: "Войти"
+      email: "Email"
+      password: "Пароль"
+      remember_me: "Запомнить меня"
+    show:
+      date_of_birth: "Дата рождения"
+      date_of_registration: "Дата регистрации"
+      favorite_places: "Любимые места"
+      name: "Имя"
+      sex: "Пол"
+      username: "Никнейм"
+      your_added_places: "Ваши добавленные места"
+    registration:
+      avatar: "Аватар"
+      back: "Назад"
+      cancel_account: "Удалить мою учетную запись"
+      cancel_message: "Вы уверены?"
+      characters_minimum: " минимум букв"
+      confirmable: "В настоящее время ожидается подтверждение для: "
+      current_password: "Действующий пароль"
+      current_password_message: "нам нужен ваш текущий пароль, чтобы подтвердить ваши изменения"
+      date_of_birth: "Дата рождения"
+      edit_title: "Редактировать профиль"
+      email: "Email"
+      female: "Женский"
+      male: "Мужской"
+      name: "Имя"
+      new_title: "Регистрация"
+      password: "Пароль"
+      password_confirmation: "Подтверждение пароля"
+      password_message: "оставьте пустым, если не хотите его менять"
+      sex: "Пол"
+      update: "Обновить"
+      username: "Никнейм"

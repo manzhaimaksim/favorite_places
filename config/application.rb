@@ -39,5 +39,8 @@ module FavoritePlaces
     config.assets.initialize_on_precompile = false
     config.assets.enabled = false
     config.assets.precompile = []
+
+    config.i18n.default_locale = :ru
+    config.i18n.available_locales = [:en, :ru]
   end
 end

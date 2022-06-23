@@ -1,7 +1,7 @@
-<h1>Избранное пользователя <%= @user.username %></h1>
+<h1><%= t('users.favorites.title')%> <%= @user.username %></h1>
 
 <% if !@places_likes.any? %>
-  <p class="buffer-top">Пользователю пока еще не понравилось ни одно место</p>
+  <p class="buffer-top"><%= t('users.favorites.has_not_liked') %></p>
 <% end %>
 
 <div id="map"></div>

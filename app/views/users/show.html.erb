@@ -6,17 +6,17 @@
 
     <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
       <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
-      <b>Username</b>
+      <b><%= t('users.show.username') %></b>
       <p><%= @user.username %></p>
-      <b>Name</b>
+      <b><%= t('users.show.name') %></b>
       <p><%= @user.name %></p>
-      <b>Sex</b>
+      <b><%= t('users.show.sex') %></b>
       <p><%= @user.sex %></p>
-      <b>Date of birth</b>
+      <b><%= t('users.show.date_of_birth') %></b>
       <p><%= @user.date_of_birth %></p>
-      <b>Date of registration</b>
+      <b><%= t('users.show.date_of_registration') %></b>
       <p><%= @user.created_at.to_date %></p>
-      <p><%= link_to "Favorite places", favorite_path(@user) %></p>
+      <p><%= link_to t('users.show.favorite_places'), favorite_path(@user) %></p>
     </div>
   </div>
 </div>
@@ -26,12 +26,12 @@
 <% if @user == current_user %>
   <div class="container">
     <% if @user.places.any? %>
-      <h3>Ваши добавленые места</h3>
+      <h3><%= t('users.show.your_added_places') %></h3>
       <div class="row">
         <%= render partial: 'places/place', collection: @user.places %>
       </div>
     <% else %>
-      <p class="buffer-top">Вы пока еще не создали ни одного места</p>
+      <p class="buffer-top"><%= t('users.show.not_created') %></p>
     <% end %>
   </div>
 <% end %>
